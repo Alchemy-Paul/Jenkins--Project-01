@@ -83,3 +83,6 @@ $ cat id_rsa.pub
 # paste the key in your github/settings/deploy
 
 # open jenkins and continue the by creating a pipeline job
+
+
+# NOTE: I USED THE REACT-DEMO-APP
