@@ -18,13 +18,14 @@ $ sudo apt-get install jenkins
 
 # Start Jenkins
 
-# You can enable the Jenkins service to start at boot with the command:
+# You can enable the Jenkins service to start at boot with the command
+
 $ sudo systemctl enable jenkins
 
-# You can start the Jenkins service with the command:
+# You can start the Jenkins service with the command
 $ sudo systemctl start jenkins
 
-# You can check the status of the Jenkins service using the command:
+# You can check the status of the Jenkins service using the command
 $ sudo systemctl status jenkins
 
 # docker
@@ -36,3 +37,47 @@ $ apt-cache policy docker-ce
 $ sudo apt install docker-ce
 $ sudo systemctl status docker
 
+# add jenkins to docker user group
+$ sudo usermod -aG docker username
+
+# use jenkins user
+$ su jenkins
+
+###
+# create a folder for github
+$ mkdir Github
+$ cd Github
+$ mkdir .ssh
+$ ls -al
+total 4
+drwxrwxr-x. 3 jenkins jenkins 19 Sept 14 23:33 .
+drwxr-xr-x. 30 jenkins jenkins 4096 Sept 14 23:33 ..
+drwxrwxr-x. 2 jenkins jenkins 8 Sept 22 14:33 .ssh
+
+# generate an ssh key pair and save it in the new location
+$ ssh-keygen -t rsa
+# Generating public/private rsa key pair.
+# Enter file in which to save the key (/var/lib/jenkins/.ssh/id_rsa): /var/lib/jenkins/Github/.ssh/id_rsa
+# Enter passphrase (empty for no passphrase):
+# Enter same passphrase again:
+# Your identification has been saved in /var/lib/jenkins/Github/.ssh/id_rsa.
+# Your public key has been saved in /var/lib/jenkins/Github/.ssh/id_rsa.pub.
+# The key fingerprint is:
+# 62:08:8a:20:fg:g5:36:pn:36:cf:a8:cv:s0:r1:f1:65 jenkins@localhost.localdomain
+# The key's randomart image is:
++--[ RSA 2048]----+
+| . =. |
+| oo Oo |
+| o=o= |
+| . .o + |
+| S . = |
+| . . = . E|
+| * o |
+| . o |
+| |
++-----------------+
+
+# cd into .ssh folder and copy the rsa.pub key
+$ cat id_rsa.pub
+
+# paste the key in your github/settings/deploy
