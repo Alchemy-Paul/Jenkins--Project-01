@@ -81,3 +81,5 @@ $ ssh-keygen -t rsa
 $ cat id_rsa.pub
 
 # paste the key in your github/settings/deploy
+
+# open jenkins and continue the by creating a pipeline job
