@@ -1,5 +1,6 @@
 #! /bin/sh
 sudo yum update -y
+# use latest version for all installation
 
 #docker
 sudo amazon-linux-extras install docker
@@ -7,6 +8,7 @@ sudo service docker start
 sudo usermod -a -G docker ec2-user
 
 ## installing java
+## use latest version
 sudo yum -y install java-1.8.0-openjdk
 
 # jenkins
