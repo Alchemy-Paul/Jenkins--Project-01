@@ -49,7 +49,7 @@ $ mkdir Github
 $ cd Github
 $ mkdir .ssh
 $ ls -al
-total 4
+total 4 (depends on your end)
 drwxrwxr-x. 3 jenkins jenkins 19 Sept 14 23:33 .
 drwxr-xr-x. 30 jenkins jenkins 4096 Sept 14 23:33 ..
 drwxrwxr-x. 2 jenkins jenkins 8 Sept 22 14:33 .ssh
