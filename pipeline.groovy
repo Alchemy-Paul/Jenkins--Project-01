@@ -25,7 +25,7 @@ pipeline {
         stage('Run Docker Container') {
             steps {
                 script {
-                    sh 'docker run -p 8001:8001 -d react_django_demo_app'
+                    sh 'docker run -p 9000:9000 -d react_django_demo_app'
                 }
             }
         }
